@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足球赔率指南 | 简明专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9d7 0%, #f3d7b0 50%, #eac694 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+            color: #2d2a24;
+        }
+        .magazine-card {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(120, 80, 40, 0.3), 0 8px 16px rgba(0,0,0,0.05);
+            padding: 2.5rem 2.2rem;
+            margin-bottom: 1.8rem;
+            transition: transform 0.2s ease;
+        }
+        .hero {
+            text-align: center;
+            padding: 1.2rem 0 0.8rem;
+            border-bottom: 2px solid #efdccb;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #8b5a2b, #b47c48);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            margin-bottom: 0.25rem;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: #7a6a5a;
+            background: #f4ede5;
+            display: inline-block;
+            padding: 0.15rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #573f2a;
+            margin: 2rem 0 0.75rem 0;
+            padding-left: 0.25rem;
+            border-left: 5px solid #c9a173;
+            padding-left: 0.8rem;
+        }
+        .section-title:first-of-type {
+            margin-top: 1.2rem;
+        }
+        p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            color: #3b352e;
+        }
+        .highlight-badge {
+            background: #e8d7c1;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #4a3928;
+            display: inline-block;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+        .feature-item {
+            flex: 1 1 200px;
+            background: #faf5ee;
+            border-radius: 24px;
+            padding: 1.3rem 1.2rem;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 4px 8px rgba(100,70,40,0.08);
+        }
+        .feature-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #5d432e;
+            margin-bottom: 0.5rem;
+        }
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #4f453b;
+        }
+        .faq-mini {
+            background: #f5ede3;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .faq-mini p {
+            margin-bottom: 0.5rem;
+        }
+        .faq-mini q {
+            font-style: normal;
+            font-weight: 500;
+            color: #3f2f1e;
+        }
+        .cta-line {
+            background: #eee3d4;
+            border-radius: 40px;
+            padding: 0.9rem 1.8rem;
+            text-align: center;
+            margin: 1.8rem 0 0.8rem;
+            font-size: 1.05rem;
+            border: 1px solid #dcc7b0;
+        }
+        .cta-line a {
+            color: #7a4d28;
+            font-weight: 700;
+            text-decoration: none;
+            background: #ffffffbb;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            margin: 0 0.2rem;
+            transition: all 0.15s;
+            border: 1px solid #c9a77b;
+            display: inline-block;
+            line-height: 1.8;
+        }
+        .cta-line a:hover {
+            background: #ffffff;
+            border-color: #9f7b55;
+            transform: scale(1.02);
+            box-shadow: 0 2px 8px rgba(130,80,30,0.15);
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b5d4e;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e4d4c2;
+            margin-top: 0.8rem;
+        }
+        .footer-note a {
+            color: #7a4d28;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        @media (max-width: 600px) {
+            .magazine-card {
+                padding: 1.6rem 1.2rem;
+                border-radius: 24px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 0.9rem;
+            }
+            .cta-line {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="magazine-card">
+    <div class="hero">
+        <h1>足球赔率 · 简明指南</h1>
+        <div class="sub">数据解构 · 投注参考 · 信息前置</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <h2 class="section-title">赔率不是预测，而是概率的映射</h2>
+    <p>每一组足球赔率都代表市场对赛果的集体估算。盘口、水位、变动趋势背后是球队状态、伤病、投注分布等真实信息的折现。理解赔率结构，比盲目跟注更能掌握主动权。无论是欧洲指数、亚洲让球还是大小球，基础框架大同小异——学会阅读赔率，等于拥有自己的分析起点。</p>
+
+    <!-- 简明指南段落 -->
+    <h2 class="section-title">从基本概念到实用场景</h2>
+    <p>初接触时，建议先厘清三个要点：<span class="highlight-badge">返还率</span> <span class="highlight-badge">凯利指数</span> <span class="highlight-badge">盈亏平衡点</span>。返还率反映平台抽水程度，凯利指数提示偏差与价值，盈亏平衡点则是长期计划的基石。日常分析中，横向对比多家平台的<a href="https://m-soccerodds.com" style="color:#7a4d28; font-weight:600; text-decoration:underline;">足球赔率</a>，可以发现异常波动与一致性信号，辅助形成独立判断。</p>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <strong>⚽ 赛前与滚球</strong>
+            <span>赛前赔率相对稳定，适合深度分析；滚球赔率动态更新，需要快速识别转折点。两者结合能覆盖更多比赛阶段。</span>
+        </div>
+        <div class="feature-item">
+            <strong>📊 数据对比</strong>
+            <span>不同来源的赔率差异往往暗藏信息，主流平台与亚盘、欧赔之间的细微差距，值得反复对照。</span>
+        </div>
+        <div class="feature-item">
+            <strong>🧠 心理校准</strong>
+            <span>避免被瞬时热度左右，赔率变化有时源于大额投注而非基本面。保持节奏，回归数据本身。</span>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要风格 -->
+    <div class="faq-mini">
+        <p><q>为什么不同平台赔率不一样？</q> — 每家平台的模型、用户基数、风控策略都有区别，同一场比赛出现零点零几的差异很正常。多平台比较能还原更真实的市场共识。</p>
+        <p><q>赔率越低就一定越容易打出？</q> — 不完全。低赔代表市场认为该结果概率较高，但足球冷门频出。赔率是统计期望，不是结果保证。价值在于概率与赔率的差值。</p>
+    </div>
+
+    <!-- 访问提示 + 嵌入链接 -->
+    <div class="cta-line">
+        📌 日常跟踪与深度分析，可参考专业数据站点提供的 <a href="https://m-soccerodds.com">足球赔率</a> 进行多维度对比。
+    </div>
+
+    <p style="font-size:0.95rem; background:#fcf8f2; padding:0.8rem 1rem; border-radius:20px;">
+        <strong>访问提醒</strong> · 赔率信息仅供学习与参考，请结合球队动态、伤病名单、天气等变量综合判断。理性对待每一次投注，不超出个人承受范围。
+    </p>
+
+    <div class="footer-note">
+        专题 · 赔率认知框架 &nbsp;|&nbsp; 内容仅代表信息整合立场
+    </div>
+</div>
+
+</body>
+</html>
